@@ -1,0 +1,11 @@
+commit f2920fa33cceacb32fedf000c91c53a5ef4f5a27
+Author: Yurbely Cuauro <yurbely.cuauro@viralcreation.cl>
+Date:   Thu Feb 1 11:54:17 2018 -0300
+
+    actualizacion prueba
+
+commit a4f6e2da05e28323550bcc9056e7e6a144402de7
+Author: Yurbely Cuauro <yurbely.cuauro@viralcreation.cl>
+Date:   Thu Feb 1 10:58:55 2018 -0300
+
+    subo la estructura dek proyecto al repositorio
