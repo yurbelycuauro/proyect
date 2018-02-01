@@ -1,0 +1,656 @@
+<!--
+* GenesisUI Bootstrap 4 Admin Template built as framework!
+* Version 1.8.4
+* https://GenesisUI.com
+* Copyright 2017 creativeLabs Łukasz Holeczek
+* License : https://genesisui.com/license.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="GenesisUI - UI Admin Kit Powered by Bootstrap 4">
+  <meta name="description" content="">
+  <meta name="author" content="Lukasz Holeczek">
+  <meta name="keyword" content="genesisui, bootstrap, bootstrap 4, admin, template, angular, angular 2, angular2, angular 4, angular4, angularjs, react, react.js, vue, vue.js">
+  <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+  <title>
+
+    Tables &middot; GenesisUI Bootstrap Admin Template
+    
+  </title>
+  <!-- Icons -->
+  <link href="../css/font-awesome.min.css" rel="stylesheet">
+  <link href="../css/simple-line-icons.css" rel="stylesheet">
+  <!-- Main styles for this application -->
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/docs.min.css" rel="stylesheet">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49801694-4', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <style>
+  /* Youtube responsive video container */
+  .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+  }
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  pre {
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    white-space: pre\9; / IE7+ */
+  }
+</style>
+</head>
+
+<body class="app header-fixed sidebar-fixed">
+  <header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button"><span>RETARGETING</span>&#9776;</button>
+    <a class="navbar-brand" href="#">Retargeting</a>
+    <ul class="nav navbar-nav d-md-down-none mr-auto">
+      <li class="nav-item">
+        <a class="nav-link navbar-toggler sidebar-toggler" href="#">&#9776;</a>
+      </li>
+    </ul>
+  </header>
+  <div class="app-body">
+    <div class="sidebar">
+      <nav class="sidebar-nav" id="docsNavbarContent">
+        <ul class="nav">
+          <li class="nav-item nav-dropdown active">
+            <!-- <div class="bd-toc-item "> -->
+              <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-building-o"></i>
+                Locales
+              </a>
+              <ul class="nav-dropdown-items">
+                <li class="nav-item ">
+                  <a class="nav-link" href="./jstree_local.html">
+                    <i class="fa fa-empty" aria-hidden="true"></i> Asignar Locales 
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="./definir_atributos_local.html">
+                    <i class="fa fa-empty" aria-hidden="true"></i> Asignar Caracteristcas local
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="./definir_cluster.html">
+                    <i class="fa fa-empty" aria-hidden="true"></i> Generar Cluster Temporales
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item nav-dropdown active">
+              <!-- <div class="bd-toc-item "> -->
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-picture-o"></i>
+                 Piezas
+               </a>
+               <ul class="nav-dropdown-items">
+                <li class="nav-item ">
+                  <a class="nav-link" href="./gestionpiezas.html">
+                    <i class="fa fa-empty" aria-hidden="true"></i> Asignar Piezas
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="./pieza.html">
+                    <i class="fa fa-empty" aria-hidden="true"></i> Generar Nueva Pieza
+                  </a>
+                </li>
+                
+              </ul>
+            </li>
+            <li class="nav-item nav-dropdown active">
+              <!-- <div class="bd-toc-item "> -->
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-table"></i>
+                 plantilla
+               </a>
+               <ul class="nav-dropdown-items">
+                <li class="nav-item active bd-sidenav-active">
+                  <a class="nav-link" href="./index3.html">
+                    <i class="fa fa-empty" aria-hidden="true"></i> Asignar cantidades
+                  </a>
+                </li>
+                <li class="nav-item active bd-sidenav-active">
+                  <a class="nav-link" href="./actualizarficha.html">
+                    <i class="fa fa-empty" aria-hidden="true"></i> Actualizar Plantilla
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <main class="main">
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+            <div class="card">
+              <div class="card-header">
+              </div>
+              <div class="card-block">
+                <h2 id="examples">Plantilla</h2>
+                <div class="bd-example" data-example-id="">
+
+                  <p >
+                   Seleccione la Plantilla para activar:
+                   <select  class="selec" data-bind="options: fichas,
+                   optionsText: 'descripcion_ficha',
+                   value: selectedFicha,
+                   optionsCaption: 'seleccione',
+                   event:{ change: activarFicha}"",></select>
+                 </p>
+                 <div class="bd-example">
+                  <div class="panel-heading">
+                    Asignar cantidades por Formatos
+                  </div>
+                  <form id="form">
+                    <table id="tablecluster" class="table table-striped table-bordered table-hover  " style="overflow-X: scroll;">
+                      <thead>
+                        <tr>
+                          <th class="col-xs-1">Ficha</th>
+                          <!-- ko foreach: piezas -->
+                          <th class="col-xs-1" data-bind="text: $data.nombre_producto"></th>
+                          <!-- /ko -->
+                        </tr>
+                      </thead>
+                      <tbody data-bind="foreach: cluster"  >
+                        <tr class="odd gradeX">
+                          <td>
+                            <span data-bind="text: $data.descripcion_cluster"></span>
+                            <input type="hidden" name="id" data-bind="value: $data.id_cluster"></input>
+                          </td>
+                          <!-- ko foreach: $root.piezas -->
+                            <td style="overflow: auto">
+                              <input type="hidden" name="k" data-bind="value: $data.id_producto" ></input>
+                              <input type="number" name="v" data-bind="value: $parent[$data]" size="1" max="3" min="0"></input>
+                            </td>
+                          <!-- /ko -->
+                        </tr>
+                      </tbody>
+                    </table>
+                  </form>
+                  <form id="form_detalle">
+                    <table id="table_detalle" class="table table-striped table-bordered table-hover  " style="overflow-X: scroll;">
+                      <thead>
+                        <tr>
+                          <th class="col-xs-1">Ficha</th>
+                          <!-- ko foreach: piezas -->
+                          <th class="col-xs-1" data-bind="text: $data.nombre_producto"></th>
+                          <!-- /ko -->
+                        </tr>
+                      </thead>
+                      <tbody data-bind="foreach: detalle_ficha"  >
+                        <tr class="odd gradeX">
+                          <!-- ko foreach: $data -->
+                          <td class="col-xs-1"  data-bind="text: $data" >
+                            
+                            <!--<input  name="v" data-bind="value: $data" size="3" max="3" min="0"></input>-->
+                            
+                          </td>
+                          <!-- /ko -->
+
+                          
+                         </tr>
+                      </tbody>
+                    </table>
+                  </form>
+                  <div class="panel-heading">
+                    <button data-bind="click: upload" class="btn btn-primary">Asignar</button>
+                  </div>
+                </div>
+                <div>
+                  <a class="class_enlace" href="#" data-bind="click: Mostrar_detalle">ver detalle locales excluidos</a>
+                  <div id="id_exc" class="bd-example">
+                    <div class="panel-heading">
+                        Gestionar Locales  excluidos de los Cluster
+                    </div>
+                    <form id="formfesp">
+                      <table id='tabla_ex' class="table table-striped table-bordered table-hover" style="margin-left: 0px; width: 100%;">
+                        <thead>
+                          <tr>
+                            <th class="col-xs-1">Ficha</th>
+                            <!-- ko foreach: piezas -->
+                            <th class="col-xs-1" data-bind="text: $data.nombre_producto"></th>
+                            <!-- /ko -->
+                            <th class="col-xs-1">Accion</th>
+                          </tr>
+                        </thead>
+                        <tbody data-bind="foreach:locales">
+                          <tr class="odd gradeX">
+                            <td>
+                              <span data-bind="text: $data._local"></span>
+                              <input type="hidden" name="id" data-bind="value: $data.id_local"></input>
+                            </td>
+                            <!-- ko foreach: $root.piezas -->
+                            <td>
+                              <input type="hidden" name="k" data-bind="value: $data.id_producto" ></input>
+                              <input type="number" name="v" data-bind="value: $parent[$data]" size="1" max="3" min="0"></input>
+                            </td>
+                            <!-- /ko -->
+                            <td>
+                              <a href="#" data-bind="confirmcheckLocal_exc: {message: 'Esta seguro que desea registrar el local ' + $data._local + '?', click: $root.del($data.id_local)}"><i  class="fa fa-check"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </form>
+                    <form id= "bton-subir" name="bton-subir" class="form-horizontal">
+                      <button data-bind="click: uploadFesp" class="btn btn-primary">subir!</button>
+                    </form>
+                  </div>
+                  <a class="class_enlace" href="#" data-bind="click: Mostrar_detalle_individuales">ver detalle locales individuales</a>
+                  <div id="id_ind" class="bd-example">
+                    <div class="panel-heading">
+                      Gestionar  Locales Individuales
+                    </div>
+                    <form id="formLocales">
+                      <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th class="col-xs-1">Ficha</th>
+                            <!-- ko foreach: piezas -->
+                            <th class="col-xs-1" data-bind="text: $data.nombre_producto"></th>
+                            <!-- /ko -->
+                            <th class="col-xs-1">Accion</th>
+                          </tr>
+                        </thead>
+                        <tbody data-bind="foreach:fichalocal">
+                          <tr class="odd gradeX" data-bind="id:$data.id_local">
+                            <td>
+                              <span data-bind="text: $data._local"></span>
+                              <input type="hidden" name="id" data-bind="value: $data.id_local"></input>
+                            </td>
+                            <!-- ko foreach: $root.piezas -->
+                            <td>
+                              <input type="hidden" name="k" data-bind="value: $data.id_producto" ></input>
+                              <input type="number" name="v" data-bind="value: $parent[$data]" size="1" max="3" min="0"></input>
+                            </td>
+                            <!-- /ko -->
+                            <td>
+                              <a href="#" data-bind="confirmcheckLocal: {message: 'Esta seguro que desea registrar el local ' + $data._local + '?', click: $root.del($data.id_local)}"><i  class="fa fa-check"></i></a>
+                              <!--    <a href="#" data-bind="confirmRetiroLocal: {message: 'Esta seguro que desea retirar el local ' + $data._local + '?', click: $root.del($data.id_local)}"><i  class="fa fa-times"></i></a>-->
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </form>
+                    <form name="cliente" class="form-horizontal" style="display: none">
+                      <button data-bind="click: uploadFLocal" class="btn btn-primary">Asignar</button>
+                    </form>
+                  </div>
+                  <a class="class_enlace" href="#" data-bind="click: Mostrar_detalle_temp">ver detalle Cluster temporal</a>
+                  <div id="id_temp" class="bd-example">
+                    <div class="panel-heading">
+                      Gestionar Cluster temporales
+                    </div>
+                    <form id="formClusterTemporales">
+                      <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th class="col-xs-1">Ficha</th>
+                            <!-- ko foreach: piezas -->
+                            <th class="col-xs-1" data-bind="text: $data.nombre_producto"></th>
+                            <!-- /ko -->
+                          </tr>
+                        </thead>
+                        <tbody data-bind="foreach:fichaclustertemporal">
+                          <tr class="odd gradeX">
+                            <td>
+                              <span data-bind="text: $data.descripicon_cluster"></span>
+                              <input type="hidden" name="id" data-bind="value: $data.id_cluster_temporal"></input>
+                            </td>
+                            <!-- ko foreach: $root.piezas -->
+                            <td>
+                              <input type="hidden" name="k" data-bind="value: $data.id_producto" ></input>
+                              <input type="number" name="v" data-bind="value: $parent[$data]" size="1" max="3" min="0"></input>
+                            </td>
+                            <!-- /ko -->
+                          </tr>
+                        </tbody>
+                      </table>
+                    </form>
+                    <form name="clusterTemporal" class="form-horizontal">
+                      <button data-bind="click: uploadFClusterTemporal" class="btn btn-primary">Asignar</button>
+                    </form>
+                  </div>
+                  <form name="clusterTemporal" class="form-horizontal">
+                    <button data-bind="click: imprimir" class="btn btn-primary">Imprimir!</button>
+                    <input type="button" class="btn btn-outline btn-default" value="Volver" onclick="history.back()"/>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.conainer-fluid -->
+  </main>
+</div>
+
+<footer class="app-footer">
+  <span class="text-left">
+    <a href="https://genesisui.com">GenesisUI</a> &copy; 2017 creativeLabs.
+  </span>
+  <span class="pull-right">
+    Powered by <a href="https://genesisui.com">GenesisUI</a>
+  </span>
+</footer>
+<!-- Bootstrap and necessary plugins -->
+<script src="../js/libs/jquery.min.js"></script>
+<script src="../js/libs/tether.min.js"></script>
+<script src="../js/libs/bootstrap.min.js"></script>
+<script src="../js/libs/pace.min.js"></script>
+<script src="../js//docs.min.js"></script>
+<!-- GenesisUI main scripts -->
+<script src="../js//app.js"></script>
+<script type="text/javascript" src="http://knockoutjs.com/downloads/knockout-3.4.2.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.material.min.js"></script>
+
+<script type='text/javascript' src="../assets/js/plugins/dataTables/jquery.dataTables.js"></script>
+<script type='text/javascript' src="../assets/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+
+<script type='text/javascript'>
+  $(document).ready(function() {
+    $('#id_exc').hide();
+    $('#id_ind').hide();
+    $('#id_temp').hide();
+
+    function MatrizViewModel() {
+      var self = this;
+      self.piezas = ko.observableArray([]);
+      self.cluster = ko.observableArray([]);
+      self.fichas= ko.observableArray([]);
+      self.selectedFicha = ko.observable();
+      self.locales = ko.observableArray([]);
+      self.fichalocal = ko.observableArray([]);
+      self.fichaclustertemporal = ko.observable([]);
+      self.ficha=ko.observable([]);
+      self.detalle_ficha=ko.observable([]);
+      self.Mostrar_detalle = function(res) {
+        if( $('#id_exc').is(":visible") ){
+          $('#id_exc').hide();
+        }else{
+          $('#id_exc').show();
+        }
+
+      };
+      self.Mostrar_detalle_individuales = function(res) {
+        if( $('#id_ind').is(":visible") ){
+          $('#id_ind').hide();
+        }else{
+          $('#id_ind').show();
+        }
+
+      };
+      self.Mostrar_detalle_temp = function(res) {
+        if( $('#id_temp').is(":visible") ){
+          $('#id_temp').hide();
+        }else{
+          $('#id_temp').show();
+        }
+
+      };
+      $.getJSON("ficha.php/gestionfichas/obtener_fichas", function(allData) {
+        console.log(self.fichas(allData));
+        self.fichas(allData);
+
+      });
+      self.upload = function() {
+            var form = $('#form').serialize().split("&");
+            var cdf= self.selectedFicha().id_ficha;
+            console.log('ficha',cdf);
+            console.log('form',form);
+            var ret = []; var to = false; var tk;
+            for (var i = 0, l = form.length; i < l; i++) {
+              var t = form[i].split("=");
+              switch (t[0]) {
+                case "id": if (to) { ret.push(to);  console.log('to2',to)}; to = {id:t[1]}; break;
+                case "k": tk = t[1]; break;
+                case "v": to[tk] = t[1]; break;
+              }
+
+            }
+            ret.push(to);
+            ret.push(cdf);
+            console.log('ret',ret);
+            $.post("matrizDato.php/ficha/matriz", JSON.stringify(ret), function(data){
+              alert("Ficha Registrada con exito");
+               $.post("ficha.php/gestionfichas/obtener_detalles_fichas",JSON.stringify(cdf), function(allData){
+                console.log('det',allData);
+                self.detalle_ficha(allData);
+
+              });
+              //document.getElementById('form').reset();
+
+            });
+          }
+
+          self.imprimir = function(){
+            var cdf= self.selectedFicha().id_ficha;
+            $.post("ficha.php/gestionFicha/activarFicha",JSON.stringify(cdf), function(allData){
+
+            });
+            location.href = "http://app77.dev.viralcreation.cl/proyect/getting-started/matrizDato.php/ficha/matrizreport";
+          }
+          self.activarFicha = function (obj, event) {
+            var cd;
+            if (event.originalEvent) {
+              cd=obj.selectedFicha().id_ficha;
+              console.log(cd);
+              self.ficha(cd);
+              $.post("ficha.php/gestionFicha/activarFicha",JSON.stringify(cd), function(allData){
+
+              });
+              $.post("ficha.php/gestionfichas/obtener_detalles_fichas",JSON.stringify(cd), function(allData){
+                console.log('det',allData);
+                self.detalle_ficha(allData);
+
+              });
+
+              $.getJSON("definir_cluster.php/cluster/obtenerClusterTemporales", function(allData) {
+                self.fichaclustertemporal(allData);
+              });
+              $.getJSON("matrizDato.php/piezas/obtenerPieza", function(allData) {
+                self.piezas(allData);
+              });
+              $.getJSON("matrizDato.php/locales/obtenerLocales", function(allData) {
+                self.cluster(allData);
+              });
+              $.post("gestionlocales.php/gestionlocal/obtener_locales_especiales", function(allData) {
+                var b = JSON.parse(allData)
+                self.locales(b);
+
+              });
+              $.post("gestionlocales.php/gestionlocal/obtenerFichaLocal", function(allData) {
+                var b = JSON.parse(allData)
+                self.fichalocal(b);
+              });
+
+            } else {
+            }
+          }
+          /***********/
+        self.uploadFesp = function() {
+        var form = $('#formfesp').serialize().split("&");
+        var cdf= self.selectedFicha().id_ficha;
+        console.log('form',form);
+        var ret = []; var to = false; var tk;
+        for (var i = 0, l = form.length; i < l; i++) {
+          var t = form[i].split("=");
+          switch (t[0]) {
+            case "id": if (to) { ret.push(to);  console.log('to2',to)}; to = {id:t[1]}; break;
+            case "k": tk = t[1]; break;
+            case "v": to[tk] = t[1]; break;
+          }
+
+        }
+        ret.push(to);
+        ret.push(cdf);
+
+        console.log('ret',ret);
+        $.post("matrizDato.php/ficha/matrizEspecial", JSON.stringify(ret), function(data){
+          alert("Ficha Registrada con exito");
+          document.getElementById('formfesp').reset();
+
+        });
+      }/*******/
+      self.uploadFClusterTemporal = function() {
+        var form = $('#formClusterTemporales').serialize().split("&");
+        var cdf= self.selectedFicha().id_ficha;
+        console.log('form',form);
+        var ret = []; var to = false; var tk;
+        for (var i = 0, l = form.length; i < l; i++) {
+          var t = form[i].split("=");
+          switch (t[0]) {
+            case "id": if (to) { ret.push(to);  console.log('to2',to)}; to = {id:t[1]}; break;
+            case "k": tk = t[1]; break;
+            case "v": to[tk] = t[1]; break;
+          }
+
+        }
+        ret.push(to);
+        ret.push(cdf);
+
+        console.log('ret',ret);
+        $.post("definir_cluster.php/definir_cluster_temporal/generarFichaClusterTemporal", JSON.stringify(ret), function(data){
+          alert("Ficha Registrada con exito");
+          //document.getElementById('formClusterTemporales').reset();
+
+        });
+      }
+      /***************/
+        self.uploadFLocal = function() {
+          var form = $('#formLocales').serialize().split("&");
+          var cdf= self.selectedFicha().id_ficha;
+          console.log('form',form);
+          var ret = []; var to = false; var tk;
+          for (var i = 0, l = form.length; i < l; i++) {
+            var t = form[i].split("=");
+            switch (t[0]) {
+              case "id": if (to) { ret.push(to);  console.log('to2',to)}; to = {id:t[1]}; break;
+              case "k": tk = t[1]; break;
+              case "v": to[tk] = t[1]; break;
+            }
+            
+          }
+          ret.push(to);
+          ret.push(cdf);
+          
+          console.log('ret',ret);
+          $.post("matrizDato.php/ficha/matrizEspecial", JSON.stringify(ret), function(data){
+            alert("Ficha Registrada con exito");
+            document.getElementById('formLocales').reset();
+            
+          });
+        }
+        self.del = function(res) {
+          return res;
+        };
+        self.formulario = function(form,id){
+          var cdf= self.selectedFicha().id_ficha; 
+          var ret = []; var to = false; var tk;
+          for (var i = 0, l = form.length; i < l; i++) {
+            var t = form[i].split("=");
+            switch (t[0]) {
+              case "id": if (to) { ret.push(to);  console.log('to2',to)}; to = {id:t[1]}; break;
+              case "k": tk = t[1]; break;
+              case "v": to[tk] = t[1]; break;
+            }
+            
+          }
+          ret.push(to);
+          var loc = [];
+          for (var j = 0, p = ret.length; j < p; j++) {
+            var obje=ret[j];
+            var ob_id=obje.id;
+            if(ob_id==id){
+              loc.push(obje);
+              loc.push(cdf);
+
+            }else{
+              //console.log("diferente");
+            }
+          }
+          
+          return loc; 
+
+        }
+        ko.bindingHandlers.confirmcheckLocal = {
+          init: function(element, valueAccessor, allBindings, viewModel) {
+            var value = valueAccessor();
+            var message = ko.unwrap(value.message);
+            var click = value.click;
+            ko.applyBindingsToNode(element, {
+              click: function () {
+                if (confirm(message))
+                  var form = $('#formLocales').serialize().split("&");
+                var cdf= self.selectedFicha().id_ficha;
+                var data=self.formulario(form,click,cdf);
+                console.log('data',data);
+                $.post("matrizDato.php/ficha/matrizEspecial", JSON.stringify(data), function(data){
+                  alert("Ficha Registrada con exito");
+                    //document.getElementById('formLocales').reset();
+                    
+                  });
+
+              }
+            }, viewModel);
+          }
+        };
+        ko.bindingHandlers.confirmcheckLocal_exc = {
+          init: function(element, valueAccessor, allBindings, viewModel) {
+            var value = valueAccessor();
+            var message = ko.unwrap(value.message);
+            var click = value.click;
+            ko.applyBindingsToNode(element, {
+              click: function () {
+                if (confirm(message))
+                  var form = $('#formfesp').serialize().split("&");
+                console.log('click',click); 
+                var data=self.formulario(form,click);
+                console.log('data',data);
+                $.post("matrizDato.php/ficha/matrizEspecial", JSON.stringify(data), function(data){
+                  alert("Ficha Registrada con exito");
+                  document.getElementById('formLocales').reset();
+
+                });
+
+              }
+            }, viewModel);
+          }
+        };
+
+
+      };
+      ko.applyBindings(new MatrizViewModel());
+    });
+  </script>
+
+
+
+</body>
+</html>

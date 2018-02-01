@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jsTree test</title>
+  <!-- 2 load the theme CSS file -->
+  <link rel="stylesheet" href="dist/themes/default/style.min.css" />
+
+</head>
+<body>
+  <!-- 3 setup a container element -->
+  <div id="jstreee">
+    <!-- in this example the tree is populated from inline HTML -->
+    <ul>
+      <li>Root node 1
+        <ul>
+          <li id="child_node_1">Child node 1</li>
+          <li>Child node 2</li>
+        </ul>
+      </li>
+      <li>Root node 2</li>
+    </ul>
+  </div>
+  <button>demo button</button>
+  <form name="cliente" class="form-horizontal">
+    <label class="col-sm-3 control-label">Nombre de la Plantilla:</label>
+    <div class="col-sm-6">
+      <input id="ficha" class="form-control" type="text" name="pieza"data-bind="value:ficha" />
+    </div>
+    <div class="col-sm-6 margen">
+      <input type="button" style="margin-top: 20px; color: white;background: #aaa;" class="col-sm-3 btn  margen" value="Asignar" id="submit"/>
+    </div>
+  </form>
+  <div class="wrapper">
+
+    <div class="button-wrapper">
+      <button type="button" class="btn btn-success btn-sm" data-bind="click: $root.createFolder">Create Folder</button>
+      <button type="button" class="btn btn-success btn-sm" data-bind="click: $root.createFile">Create File</button>
+      <button type="button" class="btn btn-warning btn-sm" data-bind="click: $root.rename">Rename</button>
+      <button type="button" class="btn btn-danger btn-sm" data-bind="click: $root.delete">Delete</button>
+    </div>
+    <!--<pre data-bind="text: treeData"></pre>-->
+
+    <div id="jstree_demo_div" data-bind="jstree: { data: treeData }"></div>
+  </div>
+
+    <!-- 4 include the jQuery library -->
+    <script src="../js/libs/jquery.min.js"></script>
+    <!-- 5 include the minified jstree source -->
+    <script src="dist/jstree.min.js"></script>
+    <script type="text/javascript" src="http://knockoutjs.com/downloads/knockout-3.4.2.js"></script>
+
+    <script>
+      $(function () {
+    // 6 create an instance when the DOM is ready
+    $('#jstreee').jstree({
+      "core" : {
+        "themes" : {
+          "variant" : "large"
+        },
+        'data' : [
+        { "id" : "ajson1", "parent" : "#", "text" : "Simple root node" },
+        { "id" : "ajson5", "parent" : "ajson1", "text" : "Root node 1.1" },
+        { "id" : "ajson6", "parent" : "ajson1", "text" : "Root node 2" },
+        { "id" : "ajson2", "parent" : "#", "text" : "Root node 2" },
+        { "id" : "ajson3", "parent" : "ajson2", "text" : "Child 1" },
+        { "id" : "ajson4", "parent" : "ajson2", "text" : "Child 2" },
+        ]
+
+      },
+      "checkbox" : {
+        "keep_selected_style" : false
+      },
+      "plugins" : [ "wholerow", "checkbox" ]
+    });
+    // 7 bind to events triggered on the tree
+    $('#jstreee').on("changed.jstree", function (e, data) {
+      console.log(data.selected);
+    });
+    // 8 interact with the tree - either way is OK
+    $('button').on('click', function () {
+      $('#jstree').jstree(true).select_node('child_node_1');
+      $('#jstree').jstree('select_node', 'child_node_1');
+      $.jstree.reference('#jstree').select_node('child_node_1');
+    });
+  });
+      $(document).ready(function() {
+        $('#jstree_demo_div').on("changed.jstree", function (e, data) {
+          self.sele=data.selected;
+          console.log(data.selected);
+        });
+        $('#submit').click(function() {
+           var ficha= $("#ficha").val();
+          if(ficha==""){
+            alert("Debe ingresar un nombre para la Ficha");
+          }
+          else{
+            console.log(self.ficha);
+            console.log(self.sele);
+            console.log("oooo");
+
+            $('#jstree_demo_div').on("changed.jstree", function (e, data) {
+              console.log(data.selected);
+            });
+          }
+        });
+
+        
+      });
+      function tree() {
+        var self = this;
+        self.ficha = ko.observable([]);
+        self.tree = $('#jstree_demo_div');
+        self.isNodeSelected = ko.observable(false);
+        self.selectedNode = ko.observable({});
+        self.sele=ko.observable([])
+
+        //deselect all nodes
+        self.deselectAllNodes = function () {
+            self.tree.jstree('deselect_all');
+        }
+
+        self.treeData = ko.observableArray([]);
+        self.createFolder = function (data) {
+          self.treeData.push({
+            'id': 'iPhone',
+            'parent': '#',
+            'text': 'iPhone',
+            'type': 'default'
+          });
+        };
+
+        self.createFile = function (data) {
+          self.treeData.push({
+            'id': 'ios8',
+            'parent': 'iPhone',
+            'text': 'iOS 8',
+            'type': 'file'
+          });
+        };
+
+        self.rename = function (data) {
+        };
+
+        self.delete = function (data) {
+        };
+        console.log("ppp");
+
+        $.getJSON("jstrree.php/jstrree/obtenerJstrree", function(allData) {
+          console.log('get');
+          console.log(JSON.stringify(allData));
+          $date=JSON.stringify(allData)
+          self.treeData(allData);
+        });
+       
+        
+      };
+
+      ko.bindingHandlers.jstree = {
+        buildTree: function (element, treeData) {
+          $(element).jstree('destroy');
+          $(element).jstree({
+            'core': {
+              'animation': 0,
+              'check_callback': true,
+              'data': treeData
+            },
+            'types': {
+              '#': {
+                'max_depth': 20,
+                'valid_children': ['root']
+              },
+              'level_1': {
+                'valid_children': ['default']
+              },
+              'level_2': {
+                'valid_children': ['file']
+              },
+              'level_3': {
+                'valid_children': ['file']
+              },
+              'file': {
+                'icon': 'glyphicon glyphicon-file'
+              }
+            },
+            'plugins': [
+            'search',
+            'state',
+            'types',
+            'wholerow',
+            'unique',
+            'checkbox'
+            ],
+            'checkbox' : {
+              'keep_selected_style' : false
+            },
+            
+          });
+        },
+        update: function (element, valueAccessor) {
+          var treeData = ko.unwrap(valueAccessor());
+          ko.bindingHandlers.jstree.buildTree(element, treeData.data());
+        }
+        
+
+      };
+
+      ko.applyBindings(new tree());
+
+    </script>
+  </body>
+  </html>
